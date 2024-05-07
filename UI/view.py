@@ -54,8 +54,8 @@ class View(ft.UserControl):
         self._txt_result.controls.append(ft.Text(f"Il grafo ha {len(graph.nodes)} vertici"))
         self._txt_result.controls.append(ft.Text(f"Il grafo ha {len(graph.edges)} archi"))
         self._txt_result.controls.append(ft.Text(f"Gli aeroporti collegati da almeno un volo sono: "))
-        for edge in graph.edges:
-            self._txt_result.controls.append(ft.Text(f"{edge[0]} --- {edge[1]}"))
+        for edge in graph.edges.data():  #itero sui dati degli archi
+            self._txt_result.controls.append(ft.Text(f"{edge[0]} - {edge[1]} --- {edge[2]["weight"]} miles"))
         self.update_page()
 
     def print_error(self):

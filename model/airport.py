@@ -50,6 +50,9 @@ class Airport:
         return self._timezone_offset
 
     def __str__(self):
+        return f"{self.airport} ({self.city})"
+
+    def __repr__(self):
         return f"{self.airport} - {self.city}"
 
     def __hash__(self):
